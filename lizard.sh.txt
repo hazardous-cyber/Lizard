@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [[ $UID !=0 ]];
+    then
+    echo "Script must be run with sudo"
+    exit 1
+fi
+
 declare jsonarray
 declare gzarray
 for file in /home/repo/*; do
